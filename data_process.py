@@ -28,8 +28,9 @@ def generate_edges(path):
             relation_list.add(r)
             relation_id[r] = len(relation_list)
 
-    open('data/entity_id.json','w').write(json.dumps(entity_id).encode('utf-8',errors='ignore'))
-    open('data/relation_id.json','w').write(json.dumps(relation_id).encode('utf-8',errors='ignore'))
+
+    open('data/entity_id.json','w').write(unicode(json.dumps(entity_id), errors='ignore'))
+    open('data/relation_id.json','w').write(unicode(json.dumps(relation_id), errors='ignore'))
 
     lines = []
     for line in open(path):
