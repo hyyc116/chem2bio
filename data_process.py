@@ -1,5 +1,6 @@
 #coding:utf-8
 import json
+import sys
 
 def generate_edges(path):
     
