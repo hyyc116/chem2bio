@@ -190,14 +190,15 @@ if __name__ == "__main__":
         if c=='r' and isp==0:
             plt.scatter(x[i],y[i],s=40,c=c,label = label)
             isp=1
-            continue
 
-        if c =='b' and isc==0:
+        elif c =='b' and isc==0:
             plt.scatter(x[i],y[i],s=40,c=c,label = label)
             isc=1
-            continue
 
-        plt.scatter(x[i],y[i],s=40,c=c)
+        else:
+
+            plt.scatter(x[i],y[i],s=40,c=c)
+            
         plt.annotate(txt.split('_')[0], (x[i],y[i]))
 
     plt.legend()
