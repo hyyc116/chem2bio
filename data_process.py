@@ -71,12 +71,20 @@ def get_node_id(compound_path,protein_path,path):
     compound_id_dict  = {}
     for compound in compounds:
         compound_url = 'http://chem2bio2rdf.org/pubchem/resource/pubchem_compound/'+compound
-        compound_id_dict[compound] = entity_id[compound_url]
+        cid = entity_id.get(compound_url,-1)
+        if cid !="-1":
+            compound_id_dict[compound] = cid
+        else:
+            print 'Not found compound',compound
 
     protein_dict = {}
     for protein in proteins:
         protein_url = 'http://chem2bio2rdf.org/uniprot/resource/gene/'+protein
-        protein_dict[protein] = entity_id[protein_url]
+        pid = entity_id.get(protein,'-1')
+        if pid!='-1':
+            protein_dict[protein] = pid
+        else:
+            print 'Not found protein',protein
 
     open('data/compound_dict.json','w').write(json.dumps(compound_dict))
     open('data/protein_dict.json','w').write(json.dumps(protein_dict))
