@@ -131,8 +131,8 @@ def cal_sim_compund_protein(emd_path,compound_dict,protein_dict):
 
 if __name__ == '__main__':
     # generate_edges(sys.argv[1])
-    get_node_id(sys.argv[1],sys.argv[2],sys.argv[3])
-    # cal_sim_compund_protein(sys.argv[1],sys.argv[2],sys.argv[3])
+    # get_node_id(sys.argv[1],sys.argv[2],sys.argv[3])
+    cal_sim_compund_protein(sys.argv[1],sys.argv[2],sys.argv[3])
 
 
 
