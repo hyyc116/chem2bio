@@ -42,9 +42,50 @@ def generate_edges(path):
 
     open('data/trans_data.txt','w').write('\n'.join(lines))
 
+def get_node_id(compound_path,protein_path,path):
+    entity_list = set()
+    relation_list = set()
+
+    relation_id = {}
+    entity_id = {}
+    for line in open(path):
+        line = line.strip()
+        e1,r,e2 = line.split('\t')
+
+        if e1 not in entity_list:
+            entity_list.add(e1)
+            entity_id[e1] = len(entity_list)
+
+
+        if e2 not in entity_list:
+            entity_list.add(e2)
+            entity_id[e2] = len(entity_list)
+
+        if r not in relation_list:
+            relation_list.add(r)
+            relation_id[r] = len(relation_list)
+
+    compounds = [line.strip().split(',')[2] for line in open(compound_path)]
+    proteins = [line.strip().split(',')[2] for line in open(protein_path)]
+
+    compound_id_dict  = {}
+    for compound in compounds:
+        compound_url = 'http://chem2bio2rdf.org/pubchem/resource/pubchem_compound/'+compound
+        compound_id_dict[compound] = entity_id[compound_url]
+
+    protein_dict = {}
+    for protein in proteins:
+        protein_url = 'http://chem2bio2rdf.org/uniprot/resource/gene/'+protein
+        protein_dict[protein] = entity_id[protein_url]
+
+    open('data/compound_dict.json','w').write(json.dumps(compound_dict))
+    open('data/protein_dict.json','w').write(json.dumps(protein_dict))
+
+    open('data/entity_id.json','w').write(json.dumps(entity_id))
 
 if __name__ == '__main__':
-    generate_edges(sys.argv[1])
+    # generate_edges(sys.argv[1])
+    get_node_id(sys.argv[1],sys.argv[2],sys.argv[3])
 
 
 

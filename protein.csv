@@ -1,0 +1,86 @@
+NMDA-R,protein,GRIN1,Q05586,http://purl.uniprot.org/uniprot/Q05586
+NMDA-R,protein,GRIN2A,Q12879,http://purl.uniprot.org/uniprot/Q12879
+NMDA-R,protein,GRIN2B,Q13224,http://purl.uniprot.org/uniprot/Q13224
+NMDA-R,protein,GRIN2C,Q14957,http://purl.uniprot.org/uniprot/Q14957
+NMDA-R,protein,GRIN2D,O15399,http://purl.uniprot.org/uniprot/O15399
+NMDA-R,protein,GRIN3A,Q8TCU5,http://purl.uniprot.org/uniprot/Q8TCU5
+NMDA-R,protein,GRIN3B,O60391,http://purl.uniprot.org/uniprot/O60391
+AMPA/Kainate-R,protein,GRIA1,P42261,http://purl.uniprot.org/uniprot/P42261
+AMPA/Kainate-R,protein,GRIA2,P42262,http://purl.uniprot.org/uniprot/P42262
+AMPA/Kainate-R,protein,GRIA3,P42263,http://purl.uniprot.org/uniprot/P42263
+AMPA/Kainate-R,protein,GRIA4,P48058,http://purl.uniprot.org/uniprot/P48058
+AMPA/Kainate-R,protein,GRIK1,P39086,http://purl.uniprot.org/uniprot/P39086
+AMPA/Kainate-R,protein,GRIK2,Q13002,http://purl.uniprot.org/uniprot/Q13002
+AMPA/Kainate-R,protein,GRIK3,Q13003,http://purl.uniprot.org/uniprot/Q13003
+AMPA/Kainate-R,protein,GRIK4,Q16099,http://purl.uniprot.org/uniprot/Q16099
+AMPA/Kainate-R,protein,GRIK5,Q16478,http://purl.uniprot.org/uniprot/Q16478
+Arachidonic Acid,protein,,,http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL15594
+mGluR2,protein,GRM2,Q14416,http://purl.uniprot.org/uniprot/Q14416
+mGluR3 ,protein,GRM3,Q14832,http://purl.uniprot.org/uniprot/Q14832
+FK506,protein,,,http://purl.obolibrary.org/obo/CHEBI_61049
+NF-kB ,protein,NFKB1,P19838,http://purl.uniprot.org/uniprot/P19838
+NF-kB ,protein,NFKB2,Q00653,http://purl.uniprot.org/uniprot/Q00653
+PI3,protein,PI3,P19957,http://purl.uniprot.org/uniprot/P19957
+Akt,protein,AKT1,P31749,http://purl.uniprot.org/uniprot/P31749
+ Protein Tyrosine Phosphatase 1BPTP ,protein,PTP1B,P23467,http://purl.uniprot.org/uniprot/P23467
+beta-secretase 1,protein,BACE1,P56817,http://purl.uniprot.org/uniprot/P56817
+beta-secretase 2,protein,BACE2,Q9Y5Z0,http://purl.uniprot.org/uniprot/Q9Y5Z0
+beta-secretase ,protein,BACE,W8W138,http://purl.uniprot.org/uniprot/W8W138
+NOS ,protein,NOS1,P29475,http://purl.uniprot.org/uniprot/P29475
+TNFa receptor,protein,TNFR,P01375,http://purl.uniprot.org/uniprot/P01375
+Myelin Basic Protein ,protein,MBP,P02686,http://purl.uniprot.org/uniprot/P02686
+p75 ,protein,P75NTR,P08138,http://purl.uniprot.org/uniprot/P08138
+TrkA ,protein,NTRK1,P04629,http://purl.uniprot.org/uniprot/P04629
+TrkB,protein,NTRK2,Q16620,http://purl.uniprot.org/uniprot/Q16620
+CNTF receptor ,protein,CNTFR,P26992,http://purl.uniprot.org/uniprot/P26992
+GFRA-1,protein,GFRA1,P56159,http://purl.uniprot.org/uniprot/P56159
+GFRA-2 ,protein,GFRA2,O00451,http://purl.uniprot.org/uniprot/O00451
+BIRC-4,protein,XIAP,P98170,http://purl.uniprot.org/uniprot/P98170
+Endothelin receptor ETA,protein,ETA,P25101,http://purl.uniprot.org/uniprot/P25101
+Endothelin receptor ETB,protein,ETB,P24530,http://purl.uniprot.org/uniprot/P24530
+Angiotensin 2 Receptor,protein,AT1,P30556,http://purl.uniprot.org/uniprot/P30556
+caspase-3,protein,CASP3,P42574,http://purl.uniprot.org/uniprot/P42574
+Heat shock Protein HSP-25 ,protein,HSP-25,P04792,http://purl.uniprot.org/uniprot/P04792
+Heat shock Protein HSP-60,protein,HSP-60,P10809,http://purl.uniprot.org/uniprot/P10809
+Heat shock Protein HSP-70,protein,HSP-70,P0DMV8,http://purl.uniprot.org/uniprot/P0DMV8
+Heat shock Protein HSP-90,protein,HSP-90,P07900,http://purl.uniprot.org/uniprot/P08238
+Neuronal acetylcholine receptor subunit alpha-7,protein,CHRNA7,P36544,http://purl.uniprot.org/uniprot/P36544
+Neuronal acetylcholine receptor subunit alpha-4,protein,CHRNA4,P43681,http://purl.uniprot.org/uniprot/P43681
+Rho kinase,protein,ROCK,Q13464,http://purl.uniprot.org/uniprot/Q13464
+Alpha_2 receptor adrenergic,protein,ADRA2A,P08913,http://purl.uniprot.org/uniprot/P08913
+Alpha-1 receptor adrenergic ,protein,ADRA1A,P35348,http://purl.uniprot.org/uniprot/P35348
+L type calcium channel,protein,CaV1.1,Q13698,http://purl.uniprot.org/uniprot/Q13698
+N Type calcium channel,protein,CaV2.2,Q00975,http://purl.uniprot.org/uniprot/Q00975
+T type calcium channel,protein,CaV3.1,Q43497,http://purl.uniprot.org/uniprot/O43497
+sodium channel,protein,Nav1.3 (SCN3A),Q9NY46,http://purl.uniprot.org/uniprot/Q9NY46
+sodium channel,protein,Nav1.8 (SCN10A),Q9Y5Y9,http://purl.uniprot.org/uniprot/Q9Y5Y9
+Muscarinic M1,protein,CHRM1,P11229,http://purl.uniprot.org/uniprot/P11229
+Muscarinic M4,protein,CHRM4,P08173,http://purl.uniprot.org/uniprot/P08173
+Alpha-crystallin A chain,protein,CRYAA,P02489,http://purl.uniprot.org/uniprot/P02489
+Beta-crystallin B1,protein,CRYBB1,P56374,http://purl.uniprot.org/uniprot/P53674
+adenosine A1 receptors ,protein,A1R,P30542,http://purl.uniprot.org/uniprot/P30542
+adenosine A2 receptors ,protein,A2R,X5DNB4,http://purl.uniprot.org/uniprot/X5DNB4
+(ATP)-sensitive K+ channels (KATP),protein,KIR6.2,Q14654,http://purl.uniprot.org/uniprot/Q14654
+high conductance Ca2+-activated K+ channels (BKCa),protein,KCa1.1,Q12791,http://purl.uniprot.org/uniprot/Q12791
+Serotonin receptor,protein,5ht1A,P08908,http://purl.uniprot.org/uniprot/P08908
+melatonin receptor,protein,MT2 or MTNR1B,P49286,http://purl.uniprot.org/uniprot/P49286
+Kappa opioid receptor,protein,KOR,P41145,http://purl.uniprot.org/uniprot/P41145
+Delta opioid receptor,protein,DOR or OPRD1,P41143,http://purl.uniprot.org/uniprot/P41143
+PDE4A,protein,PDE4A,P27815,http://purl.uniprot.org/uniprot/P27815
+PDE4B,protein,PDE4B,Q07343,http://purl.uniprot.org/uniprot/Q07343
+PDE4C,protein,PDE4C,Q08493,http://purl.uniprot.org/uniprot/Q08493
+PDE4D,protein,PDE4D,Q08499,http://purl.uniprot.org/uniprot/Q08499
+PDE10,protein,PDE10,Q9Y233,http://purl.uniprot.org/uniprot/Q9Y233
+PDE7A,protein,PDE7A,Q13946,http://purl.uniprot.org/uniprot/Q13946
+sigma receptor,protein,OPRS1,Q99720,http://purl.uniprot.org/uniprot/Q99720
+"Nuclear Factor, Erythroid 2 Like 2",protein,NRF2 ,Q16236,http://purl.uniprot.org/uniprot/Q16236
+Purinergic Receptor P2X 7,protein,P2X7,Q99572,http://purl.uniprot.org/uniprot/Q99572
+Purinergic Receptor P2X3,protein,P2X3,P56373,http://purl.uniprot.org/uniprot/P56373
+Peroxisome Proliferator Activated Receptor Alpha,protein,PPARA,Q07869,http://purl.uniprot.org/uniprot/Q07869
+Peroxisome Proliferator Activated Receptor Delta,protein,PPARD,Q03181,http://purl.uniprot.org/uniprot/Q03181
+Peroxisome Proliferator Activated Receptor Gamma,protein,PPARG,P37231,http://purl.uniprot.org/uniprot/P37231
+p38 mitogen activated protein kinase ,protein,MAPK12,P5378,http://purl.uniprot.org/uniprot/P53778
+p38 mitogen activated protein kinase ,protein,MAPK11,Q15759,http://purl.uniprot.org/uniprot/Q15759
+p38 mitogen activated protein kinase ,protein,MAPK13,O15264,http://purl.uniprot.org/uniprot/O15264
+p38 mitogen activated protein kinase ,protein,MAPK14,Q16539,http://purl.uniprot.org/uniprot/Q16539
+Transient Receptor Potential Cation Channel Subfamily V Member 1,protein,TRPV1,Q8NER1,http://purl.uniprot.org/uniprot/Q8NER1
