@@ -173,7 +173,7 @@ if __name__ == "__main__":
     print "Running example on chem2bio2rdf ... "
     X = Math.loadtxt(sys.argv[1]);
     labels = [line.strip() for line in open(sys.argv[2])];
-    Y = tsne(X, 2, 50, 20.0);
+    Y = tsne(X, 2, 500, 20.0);
     print Y
     x =  Y[:,0]
     y =  Y[:,1]
