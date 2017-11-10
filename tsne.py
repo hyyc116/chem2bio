@@ -169,7 +169,7 @@ if __name__ == "__main__":
     # print "Run Y = tsne.tsne(X, no_dims, perplexity) to perform t-SNE on your dataset."
     print "Running example on chem2bio2rdf ... "
     X = Math.loadtxt(sys.argv[1]);
-    labels = Math.loadtxt(sys.argv[2]);
+    labels = [line.strip() for line in open(sys.argv[2])];
     Y = tsne(X, 2, 50, 20.0);
     Plot.scatter(Y[:,0], Y[:,1], 20, labels);
     Plot.savefig('chem2bio.pdf',dpi=200);
