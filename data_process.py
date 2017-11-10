@@ -74,7 +74,7 @@ def get_node_id(compound_path,protein_path,path):
     compound_id_dict  = {}
     for compound,chemid in compounds:
         compound_url = 'http://chem2bio2rdf.org/pubchem/resource/pubchem_compound/'+chemid
-        cid = entity_id.get(compound_url,-1)
+        cid = entity_id.get(compound_url,"-1")
         if cid !="-1":
             compound_id_dict[compound] = cid
         else:
@@ -131,8 +131,8 @@ def cal_sim_compund_protein(emd_path,compound_dict,protein_dict):
 
 if __name__ == '__main__':
     # generate_edges(sys.argv[1])
-    # get_node_id(sys.argv[1],sys.argv[2],sys.argv[3])
-    cal_sim_compund_protein(sys.argv[1],sys.argv[2],sys.argv[3])
+    get_node_id(sys.argv[1],sys.argv[2],sys.argv[3])
+    # cal_sim_compund_protein(sys.argv[1],sys.argv[2],sys.argv[3])
 
 
 
