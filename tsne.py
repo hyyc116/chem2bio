@@ -174,5 +174,8 @@ if __name__ == "__main__":
     X = Math.loadtxt(sys.argv[1]);
     labels = [line.strip() for line in open(sys.argv[2])];
     Y = tsne(X, 2, 50, 20.0);
+    print Y
+    print Y[:,0]
+    print Y[:,1]
     plt.scatter(Y[:,0], Y[:,1], 20, labels);
     plt.savefig('chem2bio.pdf',dpi=200);
