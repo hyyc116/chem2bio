@@ -115,14 +115,14 @@ def cal_sim_compund_protein(emd_path,compound_dict,protein_dict):
         emd = emd_dict[compound_dict[compound]]
         compound_emd[compound] = emd
         emd_list.append(emd)
-        labels.append(compound)
+        labels.append(compound+"_c")
 
     protein_emd = {}
     for protein in protein_dict.keys():
         emd = emd_dict[protein_dict[protein]]
         protein_emd[protein] = emd
         emd_list.append(emd)
-        labels.append(protein)
+        labels.append(protein+"_p")
 
     emd_list = [' '.join([str(i) for i in emd]) for emd in emd_list]
     open('data/emd_list.txt','w').write('\n'.join(emd_list))
