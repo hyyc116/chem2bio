@@ -80,13 +80,13 @@ def get_node_id(compound_path,protein_path,path):
     protein_dict = {}
     for protein in proteins:
         protein_url = 'http://chem2bio2rdf.org/uniprot/resource/gene/'+protein
-        pid = entity_id.get(protein,'-1')
+        pid = entity_id.get(protein_url,'-1')
         if pid!='-1':
             protein_dict[protein] = pid
         else:
             print 'Not found protein',protein
 
-    open('data/compound_dict.json','w').write(json.dumps(compound_dict))
+    open('data/compound_dict.json','w').write(json.dumps(compound_id_dict))
     open('data/protein_dict.json','w').write(json.dumps(protein_dict))
 
     open('data/entity_id.json','w').write(json.dumps(entity_id))
