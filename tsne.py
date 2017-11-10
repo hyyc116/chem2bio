@@ -13,6 +13,7 @@
 
 import numpy as Math
 import pylab as Plot
+import sys
 
 def Hbeta(D = Math.array([]), beta = 1.0):
     """Compute the perplexity and the P-row for a specific value of the precision of a Gaussian distribution."""
