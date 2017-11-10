@@ -98,7 +98,7 @@ def cal_sim_compund_protein(emd_path,compound_dict,protein_dict):
     emd_file = open(emd_path)
     emd_dict = {}
     print  emd_file.readline().strip()
-    for line in open(emd_file):
+    for line in emd_file:
         line = line.strip()
         splits = line.split()
         emd_dict[splits[0]] = splits[1:]
