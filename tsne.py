@@ -185,8 +185,9 @@ if __name__ == "__main__":
             c='b'
             label='compound'
 
-        plt.scatter(x[i],y[i],s=20,c=c,label=label)
+        plt.scatter(x[i],y[i],s=40,c=c,label=label)
         plt.annotate(txt.split('_')[0], (x[i],y[i]))
 
+    plt.legend()
     plt.tight_layout()
     plt.savefig('chem2bio.pdf',dpi=200);
