@@ -106,7 +106,7 @@ def cal_sim_compund_protein(emd_path,compound_dict,protein_dict):
     for line in emd_file:
         line = line.strip()
         splits = line.split()
-        emd_dict[int(splits[0])] = splits[1:]
+        emd_dict[int(splits[0])] = [float(i) for i in splits[1:]]
 
     ## get compound emd 
     compound_emd = {}
