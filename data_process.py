@@ -3,7 +3,7 @@ import json
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
-from sklearn.metrics.pairwise import cosine_similarity as cos_sim
+from scipy.spatial.distance import cosine as cos_sim
 
 def generate_edges(path):
     
