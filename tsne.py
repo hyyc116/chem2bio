@@ -177,5 +177,10 @@ if __name__ == "__main__":
     print Y
     x =  Y[:,0]
     y =  Y[:,1]
-    plt.scatter(x,y,labels);
+    plt.scatter(x,y,s=10);
+
+    for i, txt in enumerate(labels):
+        plt.annotate(txt, (x[i],x[i]))
+
+    plt.tight_layout()
     plt.savefig('chem2bio.pdf',dpi=200);
