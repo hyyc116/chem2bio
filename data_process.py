@@ -94,9 +94,41 @@ def get_node_id(compound_path,protein_path,path):
 
     # open('data/entity_id.json','w').write(json.dumps(entity_id))
 
+def cal_sim_compund_protein(emd_path,compound_dict,protein_dict):
+    emd_file = open(emd_path)
+    emd_dict = {}
+    print  emd_file.readline().strip()
+    for line in open(emd_file):
+        line = line.strip()
+        splits = line.split()
+        emd_dict[splits[0]] = splits[1:]
+
+    ## get compound emd 
+    compound_emd = {}
+    emd_list = []
+    labels = []
+    for compound in compound_dict.keys():
+        emd = emd_dict[compound_dict[compound]]
+        compound_emd[compound] = emd
+        emd_list.append(emd)
+        labels.append(compound)
+
+    protein_emd = {}
+    for protein in protein_dict.keys():
+        emd = emd_dict[protein_dict[protein]]
+        protein_emd[protein] = emd
+        emd_list.append(emd)
+        labels.append(protein)
+
+    emd_list = [' '.join([str(i) for i in emd]) for emd in emd_list]
+    open('data/emd_list.txt','w').write('\n'.join(emd_list))
+    open('data/labels.txt','w').write('\n'.join(labels))
+
+
 if __name__ == '__main__':
     # generate_edges(sys.argv[1])
-    get_node_id(sys.argv[1],sys.argv[2],sys.argv[3])
+    # get_node_id(sys.argv[1],sys.argv[2],sys.argv[3])
+    cal_sim_compund_protein(sys.argv[1],sys.argv[2],sys.argv[3])
 
 
 
