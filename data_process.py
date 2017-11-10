@@ -51,6 +51,9 @@ def get_node_id(compound_path,protein_path,path):
     for line in open(path):
         line = line.strip()
         e1,r,e2 = line.split('\t')
+        e1 = e1.strip()
+        r = r.strip()
+        e2 = e2.strip()
 
         if e1 not in entity_list:
             entity_list.add(e1)
@@ -65,12 +68,12 @@ def get_node_id(compound_path,protein_path,path):
             relation_list.add(r)
             relation_id[r] = len(relation_list)
 
-    compounds = [line.strip().split(',')[2] for line in open(compound_path)]
+    compounds = [[line.strip().split(',')[1],line.strip().split(',')[2]] for line in open(compound_path)]
     proteins = [line.strip().split(',')[2] for line in open(protein_path)]
 
     compound_id_dict  = {}
-    for compound in compounds:
-        compound_url = 'http://chem2bio2rdf.org/pubchem/resource/pubchem_compound/'+compound
+    for compound,chemid in compounds:
+        compound_url = 'http://chem2bio2rdf.org/pubchem/resource/pubchem_compound/'+chemid
         cid = entity_id.get(compound_url,-1)
         if cid !="-1":
             compound_id_dict[compound] = cid
@@ -89,7 +92,7 @@ def get_node_id(compound_path,protein_path,path):
     open('data/compound_dict.json','w').write(json.dumps(compound_id_dict))
     open('data/protein_dict.json','w').write(json.dumps(protein_dict))
 
-    open('data/entity_id.json','w').write(json.dumps(entity_id))
+    # open('data/entity_id.json','w').write(json.dumps(entity_id))
 
 if __name__ == '__main__':
     # generate_edges(sys.argv[1])
