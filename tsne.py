@@ -177,6 +177,8 @@ if __name__ == "__main__":
     print Y
     x =  Y[:,0]
     y =  Y[:,1]
+    isp=0
+    isc=0
     for i, txt in enumerate(labels):
         if txt.endswith('_p'):
             c='r'
@@ -185,7 +187,17 @@ if __name__ == "__main__":
             c='b'
             label='compound'
 
-        plt.scatter(x[i],y[i],s=40,c=c,label=label)
+        if c=='r' and isp==0:
+            plt.scatter(x[i],y[i],s=40,c=c,label = label)
+            isp=1
+            continue
+
+        if c =='b' and isc==0:
+            plt.scatter(x[i],y[i],s=40,c=c,label = label)
+            isc=1
+            continue
+
+        plt.scatter(x[i],y[i],s=40,c=c)
         plt.annotate(txt.split('_')[0], (x[i],y[i]))
 
     plt.legend()
