@@ -3,6 +3,7 @@ import json
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
+from sklearn.metrics.pairwise import cosine_similarity as cos_sim
 
 def generate_edges(path):
     
@@ -128,6 +129,23 @@ def cal_sim_compund_protein(emd_path,compound_dict,protein_dict):
     open('data/emd_list.txt','w').write('\n'.join(emd_list))
     open('data/labels.txt','w').write('\n'.join(labels))
 
+    ## cal sim
+    all_sims = []
+    header=['']
+    for protein in protein_emd.keys():
+        header.append(protein)
+
+    all_sims.append(','.join(header))
+
+    for compound in compound_emd.keys():
+        sims = [compound]
+        for protein in protein_emd.keys():
+            sim = cos_sim(compound_emd[compound],protein_emd[protein])
+            sims.append(sim)
+
+        all_sims.append(','.join([str(sim) for sim in sims]))
+
+    open('data/cosine_similarity.txt','w').write('\n'.join(all_sims))
 
 if __name__ == '__main__':
     # generate_edges(sys.argv[1])

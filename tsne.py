@@ -183,6 +183,7 @@ if __name__ == "__main__":
         if txt.endswith('_p'):
             c='r'
             label='protein'
+
         elif txt.endswith('_c'):
             c='b'
             label='compound'
@@ -204,3 +205,5 @@ if __name__ == "__main__":
     plt.legend()
     plt.tight_layout()
     plt.savefig('chem2bio.pdf',dpi=200);
+
+
