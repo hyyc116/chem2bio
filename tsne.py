@@ -180,7 +180,7 @@ if __name__ == "__main__":
     plt.scatter(x,y,s=10);
 
     for i, txt in enumerate(labels):
-        plt.annotate(txt, (x[i],x[i]))
+        plt.annotate(txt, (x[i],y[i]))
 
     plt.tight_layout()
     plt.savefig('chem2bio.pdf',dpi=200);
