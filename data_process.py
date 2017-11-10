@@ -95,6 +95,10 @@ def get_node_id(compound_path,protein_path,path):
     # open('data/entity_id.json','w').write(json.dumps(entity_id))
 
 def cal_sim_compund_protein(emd_path,compound_dict,protein_dict):
+
+    compound_dict = json.loads(open(compound_dict).read())
+    protein_dict = json.loads(open(protein_dict).read())
+
     emd_file = open(emd_path)
     emd_dict = {}
     print  emd_file.readline().strip()
