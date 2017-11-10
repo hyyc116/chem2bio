@@ -12,8 +12,11 @@
 #  Copyright (c) 2008 Tilburg University. All rights reserved.
 
 import numpy as Math
-import pylab as Plot
+# import pylab as Plot
 import sys
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
 
 def Hbeta(D = Math.array([]), beta = 1.0):
     """Compute the perplexity and the P-row for a specific value of the precision of a Gaussian distribution."""
@@ -171,5 +174,5 @@ if __name__ == "__main__":
     X = Math.loadtxt(sys.argv[1]);
     labels = [line.strip() for line in open(sys.argv[2])];
     Y = tsne(X, 2, 50, 20.0);
-    Plot.scatter(Y[:,0], Y[:,1], 20, labels);
-    Plot.savefig('chem2bio.pdf',dpi=200);
+    plt.scatter(Y[:,0], Y[:,1], 20, labels);
+    plt.savefig('chem2bio.pdf',dpi=200);
