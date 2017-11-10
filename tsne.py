@@ -177,9 +177,15 @@ if __name__ == "__main__":
     print Y
     x =  Y[:,0]
     y =  Y[:,1]
-    plt.scatter(x,y,s=10);
-
     for i, txt in enumerate(labels):
+        if txt.endswith('_p'):
+            c='r'
+            label='protein'
+        elif txt.endswith('_c'):
+            c='b'
+            label='compound'
+
+        plt.scatter(x[i],y[i],s=20,c=c,label=label)
         plt.annotate(txt, (x[i],y[i]))
 
     plt.tight_layout()
