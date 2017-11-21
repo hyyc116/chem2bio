@@ -16,7 +16,7 @@ def generate_id_dict(path):
     entity_id = {}
     for line in open(path):
         line = line.strip()
-        e1,r,e2 = line.split('\t')
+        e1,r,e2 = line.strip().split('\t')
 
         if e1 not in entity_list:
             entity_list.add(e1)
