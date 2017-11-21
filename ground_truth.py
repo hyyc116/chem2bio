@@ -96,7 +96,7 @@ def plot_dis_result(positive,negative):
     dis_counter = Counter(scores)
     xs= []
     ys = []
-    for score in sorted(dis_counter.keys())
+    for score in sorted(dis_counter.keys()):
         xs.append(score)
         ys.append(dis_counter[score])
 
