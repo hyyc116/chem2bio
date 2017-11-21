@@ -52,7 +52,7 @@ def name_id(e):
 
         return -1
 ## load id 
-def groud_truth_cal(csvfile,emd_path,entity_id_path,outpath):
+def groud_truth_cal(csv_file,emd_path,entity_id_path,outpath):
     ## entity 
     entity_id = json.loads(open(entity_id_path).read())
 
