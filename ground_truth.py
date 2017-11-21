@@ -38,7 +38,7 @@ def generate_id_dict(path):
             # relation_id[r] = len(relation_list)
 
 
-    open('data/entity_id.json','w').write(json.dumps(entity_id), errors='ignore')
+    open('data/entity_id.json','w').write(json.dumps(entity_id))
     # open('data/relation_id.json','w').write(unicode(json.dumps(relation_id), errors='ignore'))
 
 def name_id(e):
