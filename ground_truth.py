@@ -22,6 +22,7 @@ def generate_id_dict(path):
             entity_list.add(e1)
             name = name_id(e1)
             if name !=-1:
+                name = name.encode('utf8',errors='ignore')
                 entity_id[name] = len(entity_list)
 
 
@@ -29,6 +30,7 @@ def generate_id_dict(path):
             entity_list.add(e2)
             name = name_id(e2)
             if name !=-1:
+                name = name.encode('utf8',errors='ignore')
                 entity_id[name] = len(entity_list)
 
         if r not in relation_list:
