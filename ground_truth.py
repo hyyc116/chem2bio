@@ -81,8 +81,11 @@ def groud_truth_cal(csvfile,emd_path,entity_id_path,outpath):
     open(outpath,'w').write('\n'.join(results))
 
 if __name__ == '__main__':
+    print 'generate entity id ...'
     generate_id_dict(sys.argv[1])
+    print 'cal similarity ...'
     groud_truth_cal(sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])
+    print 'done'
 
 
 
