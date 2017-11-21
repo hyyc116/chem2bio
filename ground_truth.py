@@ -5,7 +5,10 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
 from scipy.spatial.distance import cosine as cos_sim
-
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+from collections import Counter
 
 def generate_id_dict(path):
     
@@ -82,14 +85,52 @@ def groud_truth_cal(csv_file,emd_path,entity_id_path,outpath):
 
     open(outpath,'w').write('\n'.join(results))
 
+
+def plot_dis_result(positive,negative):
+    scores = []
+    for line in open(positive):
+        lines = line.strip().split(',')
+        num ='{:.1f}'.format(lines[-1])
+        scores.append(float(num))
+
+    dis_counter = Counter(scores)
+    xs= []
+    ys = []
+    for score in sorted(dis_counter.keys())
+        xs.append(score)
+        ys.append(dis_counter[score])
+
+    plt.figure()
+    plt.bar(range(len(xs)),ys,align='center')
+    plt.xticks(range(len(xs)),xs)
+    plt.savefig('positive.pdf')
+
+    scores = []
+    for line in open(negative):
+        lines = line.strip().split(',')
+        num ='{:.1f}'.format(lines[-1])
+        scores.append(float(num))
+
+    dis_counter = Counter(scores)
+    xs= []
+    ys = []
+    for score in sorted(dis_counter.keys())
+        xs.append(score)
+        ys.append(dis_counter[score])
+
+    plt.figure()
+    plt.bar(range(len(xs)),ys,align='center')
+    plt.xticks(range(len(xs)),xs)
+    plt.savefig('negative.pdf')
+
 if __name__ == '__main__':
-    print 'generate entity id ...'
-    generate_id_dict(sys.argv[1])
-    print 'cal similarity ...'
-    groud_truth_cal(sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])
-    print 'done'
+    # print 'generate entity id ...'
+    # generate_id_dict(sys.argv[1])
+    # print 'cal similarity ...'
+    # groud_truth_cal(sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])
+    # print 'done'
 
-
+    plot_dis_result(sys.argv[1],sys.argv[2])
 
 
 
