@@ -103,6 +103,9 @@ def plot_dis_result(positive,negative):
     plt.figure()
     plt.bar(range(len(xs)),ys,align='center')
     plt.xticks(range(len(xs)),xs)
+    plt.title('Score distribution of positive')
+    plt.xlabel('Cosine Score')
+    plt.ylabel('Number of samples')
     plt.savefig('positive.pdf')
 
     scores = []
@@ -121,6 +124,9 @@ def plot_dis_result(positive,negative):
     plt.figure()
     plt.bar(range(len(xs)),ys,align='center')
     plt.xticks(range(len(xs)),xs)
+    plt.title('Score distribution of negative')
+    plt.xlabel('Cosine Score')
+    plt.ylabel('Number of samples')
     plt.savefig('negative.pdf')
 
 if __name__ == '__main__':
