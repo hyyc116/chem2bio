@@ -90,7 +90,7 @@ def plot_dis_result(positive,negative):
     scores = []
     for line in open(positive):
         lines = line.strip().split(',')
-        num ='{:.1f}'.format(lines[-1])
+        num ='{:.1f}'.format(float(lines[-1]))
         scores.append(float(num))
 
     dis_counter = Counter(scores)
@@ -108,7 +108,7 @@ def plot_dis_result(positive,negative):
     scores = []
     for line in open(negative):
         lines = line.strip().split(',')
-        num ='{:.1f}'.format(lines[-1])
+        num ='{:.1f}'.format(float(lines[-1]))
         scores.append(float(num))
 
     dis_counter = Counter(scores)
