@@ -19,21 +19,25 @@ def generate_id_dict(path):
         e1,r,e2 = line.split('\t')
 
         if e1 not in entity_list:
-            entity_list.add(name_id(e1))
-            entity_id[e1] = len(entity_list)
+            entity_list.add(e1)
+            name = name_id(e1)
+            if name !=-1:
+                entity_id[name] = len(entity_list)
 
 
         if e2 not in entity_list:
-            entity_list.add(name_id(e2))
-            entity_id[e2] = len(entity_list)
+            entity_list.add(e2)
+            name = name_id(e2)
+            if name !=-1:
+                entity_id[name] = len(entity_list)
 
         if r not in relation_list:
             relation_list.add(r)
-            relation_id[r] = len(relation_list)
+            # relation_id[r] = len(relation_list)
 
 
     open('data/entity_id.json','w').write(unicode(json.dumps(entity_id), errors='ignore'))
-    open('data/relation_id.json','w').write(unicode(json.dumps(relation_id), errors='ignore'))
+    # open('data/relation_id.json','w').write(unicode(json.dumps(relation_id), errors='ignore'))
 
 def name_id(e):
     if 'http://chem2bio2rdf.org/pubchem/resource/pubchem_compound/' in e :
@@ -44,7 +48,7 @@ def name_id(e):
 
     else:
 
-        return e
+        return -1
 ## load id 
 def groud_truth_cal(csvfile,emd_path,entity_id_path,outpath):
     ## entity 
