@@ -47,7 +47,9 @@ def get_obj(o1,entity_id):
     pid,t = o1
     if t=='Compound':
         obj_id = entity_id[pid]
-        name = retreive_name(pid)
+        name=pid
+        ## run later
+        #name = retreive_name(pid)
         return [obj_id,name,t,pid]
 
     elif t=='Protein':
