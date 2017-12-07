@@ -14,13 +14,17 @@ def store_data(path,entity_path):
     insert_pair = dbop()
     sql="insert into generalobj(id,name,type,otherid) values(%s,%s,%s,%s)"
     pair_sql = "insert into pair(obj1_id,obj2_id,score) values(%s,%s,%s)"
+
+    progress=0
     for line in open(path):
         line = line.strip()
         e1,r1,e2 = line.split('\t')
 
         o1 = name_type(e1)
         o2 = name_type(e2)
-
+        if progress%10000==0:
+            logging.info('Progress {:}'.format(progress))
+        progress+=1
         if o1!=-1 and o2!=-1:
 
             pid,t = o1
