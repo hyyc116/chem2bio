@@ -45,7 +45,7 @@ def store_data(path,entity_path):
 
 def get_obj(o1):
     pid,t = o1
-     if t=='Compound':
+    if t=='Compound':
         obj_id = entity_id[pid]
         name = retreive_name(pid)
         return [obj_id,name,t,pid]
