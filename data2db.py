@@ -98,11 +98,11 @@ def update_name():
         if t=='Compound':
             logging.info('Progress {:} ..'.format(progress))
             name = retreive_name(otherid)
-            insert_op.batch_insert(insert_sql,[gid,name,otherid],5000,is_auto=False)
+            insert_op.batch_insert(insert_sql,[gid,name,otherid],50,is_auto=False)
 
             progress+=1
 
-    insert_op.batch_insert(insert_sql,None,5000,end=True)
+    insert_op.batch_insert(insert_sql,None,50,end=True)
     query_op.close_db()
     insert_op.close_db()
 
