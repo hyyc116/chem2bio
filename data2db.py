@@ -29,9 +29,9 @@ def store_data(path,entity_path):
 
             obj1 = get_obj(o1,entity_id)
             obj2 = get_obj(o2,entity_id)
-
-            insert_op.batch_insert(sql,obj1,5000,is_auto=False)
-            insert_op.batch_insert(sql,obj2,5000,is_auto=False)
+            print obj1[0],obj2[0]
+            insert_op.batch_insert(sql,obj1,500,is_auto=False)
+            insert_op.batch_insert(sql,obj2,500,is_auto=False)
 
 
             insert_pair.batch_insert(pair_sql,[obj1[0],obj2[0],2],5000,is_auto=False)
