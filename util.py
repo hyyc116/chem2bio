@@ -16,10 +16,10 @@ class dbop:
         
         if isSS:
             logging.debug("connect database with normal SScursor.")
-            self._db = MySQLdb.connect("localhost","root","irlab_2015","chem2biosys",cursorclass = cursors.SSCursor)
+            self._db = MySQLdb.connect("localhost","root","irlab2013","chem2biosys",cursorclass = cursors.SSCursor)
         else:
             logging.debug("connect database with normal cursor.")
-            self._db = MySQLdb.connect("localhost","root","irlab_2015","chem2biosys")    
+            self._db = MySQLdb.connect("localhost","root","irlab2013","chem2biosys")    
         self._cursor = self._db.cursor()
         
         self._insert_index=insert_index
