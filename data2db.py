@@ -87,9 +87,25 @@ def retreive_name(pid):
     return name
 
 
+def update_name():
+    query_op = dbop()
+    insert_op = dbop()
+    sql='select id,otherid,type from generalobj'
+    insert_sql = 'insert into generalobj(id,name,otherid) values(%s,%s,%s) on duplicate key update name=values(name)'
+    cursor = query_op.query_database(sql)
+    progress=0
+    for gid,otherid,t in cursor:
+        if t=='Compound':
+            logging.info('Progress {:} ..'.format(progress))
+            name = retreive_name(otherid)
+            insert_op.batch_insert(insert_sql,[gid,name,otherid],5000,is_auto=False)
+
+    insert_op.batch_insert(insert_sql,None,5000,end=True)
+    query_op.close_db()
+    insert_op.close_db()
 
 if __name__ == '__main__':
-    store_data(sys.argv[1],sys.argv[2])
+    # store_data(sys.argv[1],sys.argv[2])
     # retreive_name(118244)
 
 
