@@ -22,7 +22,7 @@ def store_data(path,entity_path):
 
         o1 = name_type(e1)
         o2 = name_type(e2)
-        if progress%10000==0:
+        if progress%10==0:
             logging.info('Progress {:}'.format(progress))
         progress+=1
         if o1!=-1 and o2!=-1:
