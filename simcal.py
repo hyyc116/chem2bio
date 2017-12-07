@@ -23,6 +23,7 @@ def emd_sim(emd_path):
             emd_id2 = ids[j]
 
             print "{:},{:},{:}".format(emd_id,emd_id2,cos_sim(emd_dict[emd_id],emd_dict[emd_id2]))
+            j+=1
 
 if __name__ == '__main__':
     emd_sim(sys.argv[1])
