@@ -27,8 +27,8 @@ def store_data(path,entity_path):
         progress+=1
         if o1!=-1 and o2!=-1:
 
-            obj1 = get_obj(o1)
-            obj2 = get_obj(o2)
+            obj1 = get_obj(o1,entity_id)
+            obj2 = get_obj(o2,entity_id)
 
             insert_op.batch_insert(sql,obj1,5000,is_auto=False)
             insert_op.batch_insert(sql,obj2,5000,is_auto=False)
@@ -43,7 +43,7 @@ def store_data(path,entity_path):
     insert_pair.close_db()
     insert_op.close_db()
 
-def get_obj(o1):
+def get_obj(o1,entity_id):
     pid,t = o1
     if t=='Compound':
         obj_id = entity_id[pid]
