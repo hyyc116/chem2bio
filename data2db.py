@@ -22,9 +22,9 @@ def store_data(path,entity_path):
 
         o1 = name_type(e1)
         o2 = name_type(e2)
-        if progress%1000==0:
-            logging.info('Progress {:}'.format(progress))
-        progress+=1
+        # if progress%1000==0:
+        #     logging.info('Progress {:}'.format(progress))
+        # progress+=1
         if o1!=-1 and o2!=-1:
 
             obj1 = get_obj(o1,entity_id)
@@ -34,12 +34,12 @@ def store_data(path,entity_path):
                 continue
 
             # print obj1[0],obj2[0]
-            insert_op.batch_insert(sql,obj1,5000,is_auto=False)
-            insert_op.batch_insert(sql,obj2,5000,is_auto=False)
+            insert_op.batch_insert(sql,obj1,50000,is_auto=False)
+            insert_op.batch_insert(sql,obj2,50000,is_auto=False)
 
 
-            insert_pair.batch_insert(pair_sql,[obj1[0],obj2[0],2],5000,is_auto=False)
-            insert_pair.batch_insert(pair_sql,[obj2[0],obj1[0],2],5000,is_auto=False)
+            insert_pair.batch_insert(pair_sql,[obj1[0],obj2[0],2],50000,is_auto=False)
+            insert_pair.batch_insert(pair_sql,[obj2[0],obj1[0],2],50000,is_auto=False)
 
     insert_op.batch_insert(sql,None,5000,end=True)
     insert_pair.batch_insert(pair_sql,None,5000,end=True)

@@ -44,7 +44,7 @@ class dbop:
     def batch_insert(self,sql,row,step,is_auto=True,end=False):
         if end:
             if len(self._insert_values)!=0:
-                logging.info("insert {:}th data into database,final insert.".format(self._insert_index))
+                logging.info("insert {:}th data into database,final insert, of {:}".format(self._insert_index,sql))
                 self.insert_database(sql,self._insert_values)
         else:
             self._insert_index+=1
@@ -52,7 +52,7 @@ class dbop:
                 row[0] = self._insert_index
             self._insert_values.append(tuple(row))
             if self._insert_index%step==0:
-                logging.info("insert {:}th data into database".format(self._insert_index))
+                logging.info("insert {:}th data into database, sql = {:}".format(self._insert_index,sql))
                 self.insert_database(sql,self._insert_values)
                 self._insert_values=[]
 
