@@ -107,5 +107,6 @@ def update_name():
 if __name__ == '__main__':
     # store_data(sys.argv[1],sys.argv[2])
     # retreive_name(118244)
+    update_name()
 
 
