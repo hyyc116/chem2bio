@@ -33,6 +33,7 @@ def store_data(path,entity_path):
                 name = retreive_name(pid)
                 insert_op.batch_insert(sql,[obj_id,name,t,pid],5000,is_auto=False)
 
+            pid,t = o2
             elif t=='Protein':
                 obj_id2 = entity_id[pid]
                 name = pid
