@@ -29,6 +29,10 @@ def store_data(path,entity_path):
 
             obj1 = get_obj(o1,entity_id)
             obj2 = get_obj(o2,entity_id)
+
+            if obj1==None or obj2==None:
+                continue
+
             # print obj1[0],obj2[0]
             insert_op.batch_insert(sql,obj1,5000,is_auto=False)
             insert_op.batch_insert(sql,obj2,5000,is_auto=False)
@@ -46,14 +50,18 @@ def store_data(path,entity_path):
 def get_obj(o1,entity_id):
     pid,t = o1
     if t=='Compound':
-        obj_id = entity_id[pid]
+        obj_id = entity_id.get(pid,-1)
+        if obj_id ==-1:
+            return None
         name=pid
         ## run later
         #name = retreive_name(pid)
         return [obj_id,name,t,pid]
 
     elif t=='Protein':
-        obj_id = entity_id[pid]
+        obj_id = entity_id.get(pid,-1)
+        if obj_id==-1:
+            return None
         name = pid
         return [obj_id,name,t,pid]
 
