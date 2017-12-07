@@ -100,6 +100,8 @@ def update_name():
             name = retreive_name(otherid)
             insert_op.batch_insert(insert_sql,[gid,name,otherid],5000,is_auto=False)
 
+            progress+=1
+
     insert_op.batch_insert(insert_sql,None,5000,end=True)
     query_op.close_db()
     insert_op.close_db()
