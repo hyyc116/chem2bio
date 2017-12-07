@@ -27,20 +27,15 @@ def store_data(path,entity_path):
         progress+=1
         if o1!=-1 and o2!=-1:
 
-            pid,t = o1
-            if t=='Compound':
-                obj_id = entity_id[pid]
-                name = retreive_name(pid)
-                insert_op.batch_insert(sql,[obj_id,name,t,pid],5000,is_auto=False)
+            obj1 = get_obj(o1)
+            obj2 = get_obj(o2)
 
-            pid,t = o2
-            elif t=='Protein':
-                obj_id2 = entity_id[pid]
-                name = pid
-                insert_op.batch_insert(sql,[obj_id2,name,t,obj_id],5000,is_auto=False)
+            insert_op.batch_insert(sql,obj1,5000,is_auto=False)
+            insert_op.batch_insert(sql,obj2,5000,is_auto=False)
 
-            insert_pair.batch_insert(pair_sql,[obj_id,obj_id2,2],5000,is_auto=False)
-            insert_pair.batch_insert(pair_sql,[obj_id2,obj_id,2],5000,is_auto=False)
+
+            insert_pair.batch_insert(pair_sql,[obj1[0],obj2[0],2],5000,is_auto=False)
+            insert_pair.batch_insert(pair_sql,[obj2[0],obj1[0],2],5000,is_auto=False)
 
     insert_op.batch_insert(sql,None,5000,end=True)
     insert_pair.batch_insert(pair_sql,None,5000,end=True)
@@ -48,6 +43,17 @@ def store_data(path,entity_path):
     insert_pair.close_db()
     insert_op.close_db()
 
+def get_obj(o1):
+    pid,t = o1
+     if t=='Compound':
+        obj_id = entity_id[pid]
+        name = retreive_name(pid)
+        return [obj_id,name,t,pid]
+
+    elif t=='Protein':
+        obj_id = entity_id[pid]
+        name = pid
+        return [obj_id,name,t,pid]
 
 
 def name_type(e):
