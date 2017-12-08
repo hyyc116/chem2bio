@@ -5,6 +5,7 @@ from util import *
 import json
 import urllib2
 from bs4 import BeautifulSoup
+import time
 
 def store_data(path,entity_path):
     #https://pubchem.ncbi.nlm.nih.gov/compound/11824
@@ -88,19 +89,39 @@ def retreive_name(pid):
 
 
 def update_name():
+    crawled_ids = set()
+    for line in open('data/already.txt'):
+        crawled_ids.add(line.strip())
+
     query_op = dbop()
     insert_op = dbop()
     sql='select id,otherid,type from generalobj'
     insert_sql = 'insert into generalobj(id,name,otherid) values(%s,%s,%s) on duplicate key update name=values(name)'
     cursor = query_op.query_database(sql)
     progress=0
+    new_ids=[]
     for gid,otherid,t in cursor:
         if t=='Compound':
-            logging.info('Progress {:} ..'.format(progress))
-            name = retreive_name(otherid)
-            insert_op.batch_insert(insert_sql,[gid,name,otherid],50,is_auto=False)
+            if gid in crawled_ids:
+                continue
+
+            if progress%500==0:
+                logging.info('Progress {:} ..'.format(progress))
+                open('data/already.txt','w+').write("\n".join(new_ids))
+                new_ids=[]
+                time.sleep(10)
+            
+            try:
+                name = retreive_name(otherid)
+            except:
+                logging.info('Error:{:}'.format(gid))
+                continue
+            new_ids.append(gid)
+            crawled_ids.add(gid)
+            insert_op.batch_insert(insert_sql,[gid,name,otherid],500,is_auto=False)
 
             progress+=1
+
 
     insert_op.batch_insert(insert_sql,None,50,end=True)
     query_op.close_db()
