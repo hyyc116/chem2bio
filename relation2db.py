@@ -25,7 +25,7 @@ def update_pair():
             continue
         id1,id2,score = line.split(',')
 
-        if id1 is not in all_ids or id2 is not in all_ids:
+        if id1 not in all_ids or id2 not in all_ids:
             continue 
 
 
