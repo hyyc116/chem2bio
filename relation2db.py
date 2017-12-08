@@ -13,7 +13,8 @@ def update_pair():
 
     for line in open('data/all_sim.txt'):
         line = line.strip()
-        print line
+        if len(line.split(","))!=3:
+            continue
         id1,id2,score = line.split(',')
 
         if float(score) > 0.5:
