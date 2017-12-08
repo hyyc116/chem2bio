@@ -42,8 +42,8 @@ def store_data(path,entity_path):
             insert_pair.batch_insert(pair_sql,[obj1[0],obj2[0],2],50000,is_auto=False)
             insert_pair.batch_insert(pair_sql,[obj2[0],obj1[0],2],50000,is_auto=False)
 
-    insert_op.batch_insert(sql,None,5000,end=True)
-    insert_pair.batch_insert(pair_sql,None,5000,end=True)
+    insert_op.batch_insert(sql,None,50000,end=True)
+    insert_pair.batch_insert(pair_sql,None,50000,end=True)
 
     insert_pair.close_db()
     insert_op.close_db()
