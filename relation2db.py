@@ -29,7 +29,7 @@ def update_pair():
             continue 
 
 
-        if float(score) > 0.5:
+        if float(score) > 0.85:
             try:
                 insert_pair.batch_insert(pair_sql,[id1,id2,float(score)],50000,is_auto=False)
                 insert_pair.batch_insert(pair_sql,[id2,id1,float(score)],50000,is_auto=False)
